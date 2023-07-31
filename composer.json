@@ -1,0 +1,42 @@
+{
+  "name": "hyperzod/shipday-sdk-php",
+  "description": "A PHP SDK to integrate Shipday with your application.",
+  "keywords": [
+    "hyperzod",
+    "shipday-sdk-php"
+  ],
+  "homepage": "https://github.com/hyperzod/shipday-sdk-php",
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Azam Siddiqui",
+      "email": "siddiquiazam966@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.4|^8.0",
+    "guzzlehttp/guzzle": "^7.5"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Hyperzod\\ShipdaySdkPhp\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Hyperzod\\ShipdaySdkPhp\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+  },
+  "config": {
+    "sort-packages": true
+  }
+}
