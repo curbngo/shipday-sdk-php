@@ -118,10 +118,11 @@ class BaseShipdayClient implements ShipdayClientInterface
 
       if ($status_code >= 200 && $status_code < 300) {
          $response = json_decode($response->getBody(), true);
-         if (isset($response["data"])) {
-            return $response["data"];
+         if ($response["success"] == true) {
+            return $response;
+         } else {
+            throw new Exception($response["response"] ?? "Success is false");
          }
-         throw new Exception("Data node not set in server response");
       } else {
          throw new Exception("Error in server response");
       }
