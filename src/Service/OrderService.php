@@ -29,6 +29,6 @@ class OrderService extends AbstractService
     */
    public function fetch($order_number)
    {
-      return $this->request(HttpMethodEnum::POST, "/orders/$order_number", []);
+      return $this->request(HttpMethodEnum::GET, "/orders/$order_number", []);
    }
 }
