@@ -118,13 +118,9 @@ class BaseShipdayClient implements ShipdayClientInterface
 
       if ($status_code >= 200 && $status_code < 300) {
          $response = json_decode($response->getBody(), true);
-         if ($response["success"] == true) {
-            return $response;
-         } else {
-            throw new Exception($response["response"] ?? "Success is false");
-         }
+         return $response;
       } else {
-         throw new Exception("Error in server response");
+         throw new Exception("Error in server response. Status code: $status_code");
       }
    }
 }
