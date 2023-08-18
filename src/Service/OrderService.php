@@ -18,4 +18,17 @@ class OrderService extends AbstractService
    {
       return $this->request(HttpMethodEnum::POST, '/orders', $params);
    }
+
+   /**
+    * Fetch an order on shipday
+    *
+    * @param array $params
+    *
+    * @throws \Hyperzod\ShipdaySdkPhp\Exception\ApiErrorException if the request fails
+    *
+    */
+   public function fetch($order_number)
+   {
+      return $this->request(HttpMethodEnum::POST, "/orders/$order_number", []);
+   }
 }
